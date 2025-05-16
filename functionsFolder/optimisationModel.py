@@ -17,7 +17,12 @@ from skopt import BayesSearchCV
 from skopt.space import Real, Categorical, Integer
 import joblib
 
-
+## Base pipeline
+base_pipeline = ImbPipeline([
+    ('scaler', StandardScaler()),
+    ('resampler', SMOTETomek(random_state=143)),
+    ('classifier', None)
+])
 
 
 def select_features(X_train, X_test, y_train, 
@@ -88,7 +93,8 @@ def select_features(X_train, X_test, y_train,
 def optimized_training(X_train, X_test, 
                        y_train, y_test,
                        classifiers, config,
-                       selector, search_spaces
+                       selector, search_spaces,
+                       features_set_name
                     ):
     
     results = [] #list to save the results from the models optimized
