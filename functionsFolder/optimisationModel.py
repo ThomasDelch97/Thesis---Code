@@ -30,7 +30,7 @@ def select_features(X_train, X_test, y_train,
                     max_features_range=(1, 50), 
                     n_iter=10):
     
-    print(f"Optimisation de max_features avec {selector}...") #Keep track of where we are since we optimise two features store
+    print(f"Optimisation de max_features avec {selector}") #Keep track of where we are since we optimise two features store
     
     pipeline = ImbPipeline([
         ('scaler', StandardScaler()),

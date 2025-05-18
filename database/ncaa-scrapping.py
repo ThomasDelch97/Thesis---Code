@@ -1,4 +1,3 @@
-## Configuration
 import requests
 import time
 import pandas as pd
@@ -6,7 +5,7 @@ from bs4 import BeautifulSoup, Comment
 import re
 from functools import reduce
 
-# Precompile regex patterns for school_clean processing
+#Precompile regex patterns for school_clean processing
 CLEAN_PATTERN = re.compile(r"[()&.']")
 SPACE_PATTERN = re.compile(r"\s+")
 NCAA_PATTERN = re.compile(r"NCAA")
@@ -18,7 +17,7 @@ stats = {
     'advanced-opponent': 'Adv-Opps',
 }
 BASE_URL = "https://www.sports-reference.com"
-REQUEST_DELAY = 3.05  # Respecting 20 requests/minute rate limit
+REQUEST_DELAY = 3.05  #Respecting 20 requests/minute rate limit
 dico_of_error = {}
 exclude_pos_1 = [1, 2, 3, 4, 6, 8, 10, 12]
 exclude_pos_2 = [1, 2, 3, 4, 6, 8, 10, 11, 12, 14]
@@ -34,8 +33,7 @@ session = requests.Session()
 session.headers.update(HEADERS)
 
 def fetch_html(url, session):
-    """Fetch HTML content with robust error handling and rate limiting"""
-    time.sleep(REQUEST_DELAY)  # Maintain rate limiting
+    time.sleep(REQUEST_DELAY)  #Maintain rate limit
     try:
         response = session.get(url, timeout=10)
         response.raise_for_status()
@@ -56,7 +54,7 @@ for key, value in stats.items():
             soup = BeautifulSoup(team_html, 'lxml')
             table = soup.find('table')
             
-            # Use direct table parsing if possible
+            #Use direct table parsing if possible
             headers = ["School", "G", "W", "L", "W-L%", "SRS", "SOS", "del1",
                       "W", "L", "del2", "W", "L", "del3", "W", "L", "del4", 
                       "Tm.", "Opp.", "del5", "MP", "FG", "FGA", "FG%", "3P", 
@@ -74,7 +72,7 @@ for key, value in stats.items():
             season_college_team.to_csv(f'Team NCAA {year} {key}.csv', index=False)
 
             if key == "school":
-                # Optimized school cleaning with precompiled regex
+                #Optimized school cleaning with precompiled regex
                 season_college_team['school_clean'] = (
                     season_college_team['School']
                     .str.replace(CLEAN_PATTERN, "", regex=True)
@@ -96,13 +94,13 @@ for key, value in stats.items():
                         soup = BeautifulSoup(player_html, 'lxml')
                         tables = soup.find_all('table')
                         
-                        # Extract tables from comments
+                        #Extract tables from comments
                         comments = soup.find_all(string=lambda text: isinstance(text, Comment))
                         for comment in comments:
                             comment_soup = BeautifulSoup(comment, 'lxml')
                             tables.extend(comment_soup.find_all('table'))
 
-                        # Determine table configuration
+                        #Determine table configuration
                         table_config = dic_of_position_1 if len(tables) == 9 else dic_of_position_2
                         exclude_pos = exclude_pos_1 if len(tables) == 9 else exclude_pos_2
 
@@ -111,7 +109,7 @@ for key, value in stats.items():
                             if i in exclude_pos:
                                 continue
                             
-                            # Extract headers and rows
+                            #Extract headers and rows
                             header_row = table.find('thead').find('tr') if table.find('thead') else table.find('tr')
                             headers = [th.get_text(strip=True) for th in header_row.find_all(['th', 'td'])]
                             
