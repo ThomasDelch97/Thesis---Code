@@ -2,6 +2,6 @@
 *.csv
 *.xlsx
 *.pyc
-test.ipynb
-FinalModelling.ipynb
-C:\Users\Utilisateur\Desktop\Master ULB\Mémoire\Thesis - Code\ModellingAutomation.ipynb
+database\database creation\indiv-player.ipynb
+database\database creation\ncaa - scouting report scrapping.py
+functionsFolder\modelAutomation.py
