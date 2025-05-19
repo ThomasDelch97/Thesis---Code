@@ -3,7 +3,7 @@
 
 Those are the codes associated with my master thesis: "Does context matters?"
 
-There are all the code (except many tests) that I used from the beginning to the end of my project.
+There are all the code (except all the different test codes) that I used from the beginning to the end of my project.
 
 This include:
 * Scrapping to get data 
@@ -22,20 +22,20 @@ Contains all the graphs and analysis from the Paper (such as Feature Selection c
 ### Databases
 Contains all the code associated with the creation of a database
 
-**Creation** contain the scrapping for the NBA and NCAA part
+* **Creation** contain the scrapping for the NBA and NCAA part
 
-**Database Update** contain functions to merge the data
+* **Database Update** contain functions to merge the data
 
 ### FunctionFolder
 Contains all the functions used in other file
 
-**config.py** 
+* **config.py** 
 Some configuration items
 
-**preProcessingAuto.py**
+* **preProcessingAuto.py**
 Functions used to preprocess quickly the database (based on my analysis)
 
-**OptimisationModel.py**
+* **OptimisationModel.py**
 Function to select the features and to optimize the hyperparameters with BayesSearchCV
 
 ### Modelisation Finale
