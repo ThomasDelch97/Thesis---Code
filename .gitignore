@@ -2,3 +2,6 @@
 *.csv
 *.xlsx
 *.pyc
+test.ipynb
+FinalModelling.ipynb
+ModellingAutomation.ipynb
