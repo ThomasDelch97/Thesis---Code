@@ -2,6 +2,17 @@
 *.csv
 *.xlsx
 *.pyc
+!tf_idf_df.xlsx
+!Data\27-4-2025_player.xlsx
+!Data\Scouting reports - Copie (2).xlsx
+!Data\27-4-2025_team.xlsx
+!Data\Regular Season.xlsx
+!Data\NBA Draft Picks 2000.csv
+!Data\looping_df_1746884524.8275206.xlsx
+!Data\Season Summary Analysis.xlsx
+!Data/NBA All playoff participating team.csv
+!Data\modern_RAPTOR_by_player (2014-2022).xlsx
 database\database creation\indiv-player.ipynb
 database\database creation\ncaa - scouting report scrapping.py
 functionsFolder\modelAutomation.py
+ArchivedTests\autoModelClass.py
