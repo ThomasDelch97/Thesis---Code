@@ -3,13 +3,13 @@ import time
 from utilsDatabaseUpdate import updateDatabase, create_wide_table, get_last_seasons, add_years_played
 from datetime import datetime
 
-HOME = r"C:\Users\Utilisateur\Desktop\Master ULB\Mémoire\Database"
-TARGET_PATH = r"\NBA\Stats 2000 to 2024\Regular Season.xlsx"
-FEATURE_PATH = r"\Working db\Features\working_df_27-4-25.csv"
+HOME = r"home"
+TARGET_PATH = r"Data\Regular Season.xlsx"
+FEATURE_PATH = r"Data\working_df_27-4-25.csv"
 
 df1 = pd.read_excel(HOME + TARGET_PATH)
 features =  pd.read_csv(HOME+FEATURE_PATH)
-DRAFT_2000 = HOME + r"\NBA\Draft Picks 2000 to 2024\NBA Draft Picks 2000.csv"
+DRAFT_2000 = r"Data\NBA Draft Picks 2000.csv"
 draft = pd.read_csv(DRAFT_2000)
 
 df1 = add_years_played(df1, draft)
