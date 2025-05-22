@@ -46,3 +46,22 @@ Other analysis not (directly) relevant for the final paper but was part of the c
 
 ### Data
 The most important data only and the PBP data for the interest ones.
+
+
+# LICENSE
+
+ML Application to predict draft prospects future performances
+    Copyright (C) <2025>  <DELCHAMBRE Thomas>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
