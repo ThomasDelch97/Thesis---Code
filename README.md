@@ -47,6 +47,12 @@ Other analysis not (directly) relevant for the final paper but was part of the c
 ### Data
 The most important data only and the PBP data for the interest ones.
 
+# Sources
+* https://www.sports-reference.com: Team and player’s past statistics
+* https://www.nbadraft.net: Scouting report and evaluation
+* https://basketball.realgm.com: Team and player’s past statistics
+* https://basketball-reference.com: Player’s future statistics 
+* https://github.com/sportsdataverse: PBP Data
 
 # LICENSE
 
